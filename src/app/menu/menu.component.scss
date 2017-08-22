@@ -1,10 +1,38 @@
 $zero : 0px;
+$tenPx : 10px;
+@mixin border-radius($radius) {
+	border-radius:$radius;
+	-webkit-border-radius:$radius;
+	-moz-border-radius:$radius;
+	-o-border-radius:$radius;
+}
+
+@mixin box-shadow($x, $y, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $x $y $blur $color;
+    -moz-box-shadow:inset $x $y $blur $color;
+    box-shadow:inset $x $y $blur $color;
+  } @else {
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow: $x $y $blur $color;
+    box-shadow: $x $y $blur $color;
+  }
+}
+
+
 .container-fluid {
 	padding: $zero;
 	margin: $zero;
 }
+/*nested classes*/
 .food-list {
+	padding: $tenPx;
 	.col-md-4 {
-		border:1px solid #000;
+		.food-list-inner {
+			padding: $tenPx;
+			border:1px solid #ddd;
+			@include border-radius(2px);
+			@include box-shadow(0, 1px, 1px, rgba(0, 0, 0, 0.2));
+		}
 	}
 }
