@@ -10,15 +10,22 @@ import 'hammerjs';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
-import { DishService } from './services/dish.service';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import { FoodsComponent } from './foods/foods.component';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { DishService } from './services/dish.service';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     DishdetailComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent,
+    FoodsComponent,
+    RestaurantsComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +33,8 @@ import { HeaderComponent } from './header/header.component';
     FormsModule,
     HttpModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AppRoutingModule
   ],
   providers: [ DishService ],
   bootstrap: [AppComponent]
