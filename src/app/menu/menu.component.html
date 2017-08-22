@@ -1,27 +1,4 @@
-<!-- <div class="container" fxLayout = "column" fxLayoutGap = "10px">
-	<md-list fxFlex>
-		<md-list-item *ngFor="let dish of dishes">
-			<img md-list-avatar src="{{dish.image}}" alt="{{dish.name}}"/>
-			<h1 md-line>{{dish.name}}</h1>
-			<p><span>{{dish.description}}</span></p>
-		</md-list-item>
-	</md-list>
-</div> -->
-
-
-<!-- <div style="width:100%;">
-	<ul *ngFor="let dish of dishes" style="list-style:none;">
-		<li>
-			<img src="{{dish.image}}">
-			<h1>{{dish.name}}</h1>
-			<h5>{{dish.price}}</h5>
-			<h3>{{dish.description}}</h3>
-		</li>
-	</ul>
-</div>
- -->
-
- <div class="container-fluid food-list">
+<div class="container-fluid food-list">
  	<div class="row">
  		<div class="col-md-4" *ngFor="let dish of dishes">
  			<div class="food-list-inner">
@@ -35,3 +12,16 @@
  		</div>
  	</div>
  </div>
+<hr />
+<div class="container-fluid row">
+	<div class="col-md-4">
+		<div class="card" *ngIf="selectedDish">
+  			<img class="card-img-top" src="{{selectedDish.image}}" alt="{{selectedDish.name}}">
+  			<div class="card-body">
+    		<h4 class="card-title">{{selectedDish.name | uppercase}}</h4>
+    		<p class="card-text">{{selectedDish.description}}</p>
+    		<a href="#" class="btn btn-primary">Like</a>
+  		</div>
+	</div>
+</div>
+</div>
