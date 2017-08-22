@@ -1,18 +1,21 @@
 <div class="container-fluid food-list">
  	<div class="row">
- 		<div class="col-md-4" *ngFor="let dish of dishes">
+ 		<div class="col-md-4" *ngFor="let dish of dishes" (click)="onSelect(dish)">
  			<div class="food-list-inner">
  				<div class="food-img-head row">
  					<div class="col-md-4"><img class="rounded-circle" src="{{dish.image}}" alt="{{dish.name}}"/></div>
- 					<div class="col-md-8"><h1>{{dish.name}}</h1></div>
+ 					<div class="col-md-8">
+ 						<h2>{{dish.name}}</h2>
+ 						<span>&#8377; {{dish.price}}</span>
+ 					</div>
  				</div>
 				<p><span>{{dish.description}}</span></p>
-				<span>&#8377; {{dish.price}}</span>
  			</div>
  		</div>
  	</div>
  </div>
 <hr />
+<!-- card -->
 <div class="container-fluid row">
 	<div class="col-md-4">
 		<div class="card" *ngIf="selectedDish">
