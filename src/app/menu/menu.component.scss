@@ -1,0 +1,10 @@
+$zero : 0px;
+.container-fluid {
+	padding: $zero;
+	margin: $zero;
+}
+.food-list {
+	.col-md-4 {
+		border:1px solid #000;
+	}
+}
