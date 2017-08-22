@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
                            image: '/assets/images/uthappizza.png',
                            category: 'mains',
                            label:'Hot',
-                           price:'4.99',
+                           price:'200',
                            description:'A unique combination of Indian Uthappam (pancake) and Italian pizza, topped with Cerignola olives, ripe vine cherry tomatoes, Vidalia onion, Guntur chillies and Buffalo Paneer.' 
                          },
                         {
@@ -22,7 +22,7 @@ export class MenuComponent implements OnInit {
                            image: '/assets/images/zucchipakoda.png',
                            category: 'appetizer',
                            label:'',
-                           price:'1.99',
+                           price:'75',
                            description:'Deep fried Zucchini coated with mildly spiced Chickpea flour batter accompanied with a sweet-tangy tamarind sauce'
                          },
                         {
@@ -30,7 +30,7 @@ export class MenuComponent implements OnInit {
                            image: '/assets/images/vadonut.png',
                            category: 'appetizer',
                            label:'New',
-                           price:'1.99',
+                           price:'50',
                            description:'A quintessential ConFusion experience, is it a vada or is it a donut?'
                         },
                         {
@@ -38,7 +38,7 @@ export class MenuComponent implements OnInit {
                            image: '/assets/images/elaicheesecake.png',
                            category: 'dessert',
                            label:'',
-                           price:'2.99',
+                           price:'250',
                            description:'A delectable, semi-sweet New York Style Cheese Cake, with Graham cracker crust and spiced with Indian cardamoms'
                         }  
                         ];

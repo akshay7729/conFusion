@@ -23,14 +23,15 @@
 
  <div class="container-fluid food-list">
  	<div class="row">
- 		<div class="col-md-4">
- 			<div class="food-list-inner">sdsads</div>
- 		</div>
- 		<div class="col-md-4">
- 			<div class="food-list-inner">sdsads</div>
- 		</div>
- 		<div class="col-md-4">
- 			<div class="food-list-inner">sdsads</div>
+ 		<div class="col-md-4" *ngFor="let dish of dishes">
+ 			<div class="food-list-inner">
+ 				<div class="food-img-head row">
+ 					<div class="col-md-4"><img class="rounded-circle" src="{{dish.image}}" alt="{{dish.name}}"/></div>
+ 					<div class="col-md-8"><h1>{{dish.name}}</h1></div>
+ 				</div>
+				<p><span>{{dish.description}}</span></p>
+				<span>&#8377; {{dish.price}}</span>
+ 			</div>
  		</div>
  	</div>
  </div>
