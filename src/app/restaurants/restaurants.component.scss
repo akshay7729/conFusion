@@ -1,0 +1,38 @@
+@mixin border-radius($radius) {
+	border-radius:$radius;
+	-webkit-border-radius:$radius;
+	-moz-border-radius:$radius;
+	-o-border-radius:$radius;
+}
+/*box shadow mixin*/
+@mixin box-shadow($x, $y, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $x $y $blur $color;
+    -moz-box-shadow:inset $x $y $blur $color;
+    box-shadow:inset $x $y $blur $color;
+  } @else {
+    -webkit-box-shadow: $x $y $blur $color;
+    -moz-box-shadow: $x $y $blur $color;
+    box-shadow: $x $y $blur $color;
+  }
+}
+.jumbotron {
+	background:url('/assets/images/coffee.jpg') 50%;
+	background-size: cover;
+	height: 100vh;
+	background-attachment: fixed; 
+	color:#f0f0f0;
+	@include border-radius(0px);
+	.address {
+		text-align: right;
+		h2 {
+			margin-bottom: 20px;
+		}
+	}
+	h4 {
+	    padding: 17px;
+	    letter-spacing: 2px;
+	    line-height: 1.5;
+	    background: rgba(0,0,0,0.4);
+	}
+}
