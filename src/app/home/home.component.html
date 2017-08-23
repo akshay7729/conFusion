@@ -1,3 +1,19 @@
-<p>
-  home works!
-</p>
+<div class="container-fluid row cards">
+	<div class="card" style="width: 20rem;" *ngIf="dish">
+	  <img class="card-img-top" src="{{dish.image}}" alt="{{dish.name}}">
+		  <div class="card-body">
+		     <h4 class="card-title">{{dish.name}}</h4>
+		     <p class="card-text">{{dish.description}}</p>
+		     <a href="#" class="btn btn-primary"><i class="fa fa-inr" aria-hidden="true"></i> {{dish.price}}</a>
+		  </div>
+	</div>
+
+	<div class="card" style="width: 20rem;" *ngIf="promotion">
+	  <img class="card-img-top" src="{{promotion.image}}" alt="{{promotion.name}}">
+		  <div class="card-body">
+		     <h4 class="card-title">{{promotion.name}}</h4>
+		     <p class="card-text">{{promotion.description}}</p>
+		     <a href="#" class="btn btn-primary"><i class="fa fa-inr" aria-hidden="true"></i> {{promotion.price}}</a>
+		  </div>
+	</div>
+</div>

@@ -15,7 +15,9 @@ import { HomeComponent } from './home/home.component';
 import { FoodsComponent } from './foods/foods.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { DishService } from './services/dish.service';
+import { PromotionService } from './services/promotion.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +38,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     FlexLayoutModule,
     AppRoutingModule
   ],
-  providers: [ DishService ],
+  providers: [ DishService, PromotionService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
