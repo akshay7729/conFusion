@@ -17,6 +17,8 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { LoginComponent } from './login/login.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     HeaderComponent,
     HomeComponent,
     FoodsComponent,
-    RestaurantsComponent
+    RestaurantsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -36,9 +39,11 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     HttpModule,
     MaterialModule,
     FlexLayoutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule.forRoot()
   ],
   providers: [ DishService, PromotionService ],
+  entryComponents: [LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

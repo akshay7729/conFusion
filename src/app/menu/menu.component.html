@@ -16,15 +16,11 @@
  </div>
 <hr />
 <!-- card -->
-<div class="container-fluid row">
-	<div class="col-md-4">
-		<div class="card" *ngIf="selectedDish">
-  			<img class="card-img-top" src="{{selectedDish.image}}" alt="{{selectedDish.name}}">
-  			<div class="card-body">
-    		<h4 class="card-title">{{selectedDish.name | uppercase}}</h4>
-    		<p class="card-text">{{selectedDish.description}}</p>
-    		<a href="#" class="btn btn-primary">Like</a>
-  		</div>
-	</div>
-</div>
-</div>
+<div class="card" *ngIf="selectedDish">
+        <img class="card-img-top" src="{{selectedDish.image}}" alt="{{selectedDish.name}}">
+        <div class="card-body">
+        <h4 class="card-title">{{selectedDish.name | uppercase}}</h4>
+        <p class="card-text">{{selectedDish.description}}</p>
+        <a href="#" class="btn btn-primary">Like</a>
+      </div>
+  </div>
