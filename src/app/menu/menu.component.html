@@ -1,4 +1,4 @@
-<div class="container-fluid food-list">
+<div class="container-fluid food-list" *ngIf="dishes">
  	<div class="row">
  		<div class="col-md-4" *ngFor="let dish of dishes" (click)="onSelect(dish)">
  			<div class="food-list-inner">
@@ -14,6 +14,8 @@
  		</div>
  	</div>
  </div>
+
+ <div [hidden]="dishes">Loading... Please Wait</div>
 <hr />
 <!-- card -->
 <div class="card" *ngIf="selectedDish">
