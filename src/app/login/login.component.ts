@@ -9,9 +9,15 @@ import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 })
 export class LoginComponent implements OnInit {
 
+  user = {remeber:false};
+
   constructor(public activeModal: NgbActiveModal) { }
 
   ngOnInit() {
+  }
+
+  onSubmit(){
+  	console.log("User: ", this.user);
   }
 
 }

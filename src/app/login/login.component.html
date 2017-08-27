@@ -1,12 +1,36 @@
 <div class="modal-header">
-      <h4 class="modal-title">Hi there!</h4>
+      <h4 class="modal-title">Login</h4>
       <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
         <span aria-hidden="true">&times;</span>
       </button>
+</div>
+
+<!-- <p>{{user | json}}</p> -->
+
+<div class="modal-body">
+  <form novalidate #loginForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Username</label>
+    <input type="text" class="form-control" id="exampleInputText" aria-describedby="Username" placeholder="Enter Username" name="username" [(ngModel)]="user.username" #username="ngModel" minlength="6">
+    <div [hidden]="username.valid || username.pristine" class="alert alert-danger">
+      Please enter at least 6 digit username
     </div>
-    <div class="modal-body">
-      <p>Hello, World</p>
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
-    </div>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" [(ngModel)]="user.password" #password="ngModel" minlength="6">
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input" name="remember" [(ngModel)]="user.remember">
+      Remember Me
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="loginForm.form.invalid">Submit</button>
+</form>
+</div>
+
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+</div>
