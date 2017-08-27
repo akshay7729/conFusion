@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from '@angular/material';
@@ -19,6 +20,7 @@ import { PromotionService } from './services/promotion.service';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     FoodsComponent,
     RestaurantsComponent,
-    LoginComponent
+    LoginComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,10 +43,11 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MaterialModule,
     FlexLayoutModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     NgbModule.forRoot()
   ],
   providers: [ DishService, PromotionService ],
-  entryComponents: [LoginComponent],
+  entryComponents: [LoginComponent, ContactComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
