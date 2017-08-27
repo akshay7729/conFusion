@@ -24,10 +24,10 @@ export class ContactComponent implements OnInit {
 
   createForm(){
   	this.feedbackForm = this.fb.group({
-  		firstname: '',
-  		lastname: '',
-  		telnum: 0,
-  		email: '',
+  		firstname: ['',[Validators.required, Validators.minLength(4), Validators.maxLength(10)]],
+  		lastname: ['',[Validators.required, Validators.minLength(5), Validators.maxLength(12)]],
+  		telnum: [0,Validators.required],
+  		email: ['',Validators.required],
   		message: '' 
 
   	});
@@ -36,7 +36,13 @@ export class ContactComponent implements OnInit {
   onSubmit(){
     this.feedback = this.feedbackForm.value;
     console.log(this.feedback);
-    this.feedbackForm.reset();
+    this.feedbackForm.reset({
+      firstname: '',
+      lastname: '',
+      telnum:0,
+      email: '',
+      message: '' 
+    });
   }
 
 }

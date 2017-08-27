@@ -1,7 +1,7 @@
 <div class="modal-header">
       <h4 class="modal-title">Contact Us</h4>
       <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
+        <span aria-hidden="true" style="cursor:pointer;">&times;</span>
       </button>
 </div>
 
@@ -10,11 +10,23 @@
   <div class="form-group">
     <label for="exampleInputEmail1">First Name</label>
     <input type="text" class="form-control" id="exampleInputText" aria-describedby="firstname" placeholder="Enter First Name" name="firstname" formControlName="firstname">
+    <div *ngIf="feedbackForm.controls['firstname'].hasError('minlength')" class="alert alert-danger">
+    	Please Enter atleast 4 characters
+    </div>
+    <div *ngIf="feedbackForm.controls['firstname'].hasError('maxlength')" class="alert alert-danger">
+    	Please Enter atmost 10
+    </div>
   </div>
 
   <div class="form-group">
     <label for="exampleInputEmail2">Last Name</label>
     <input type="text" class="form-control" id="exampleInputText2" aria-describedby="lastname" placeholder="Enter Last Name" name="lastname" formControlName="lastname">
+    <div *ngIf="feedbackForm.controls['lastname'].hasError('minlength')" class="alert alert-danger">
+    	Please Enter atleast 5 characters
+    </div>
+    <div *ngIf="feedbackForm.controls['lastname'].hasError('maxlength')" class="alert alert-danger">
+    	Please Enter atmost 12
+    </div>
   </div>
 
   <div class="form-group">
@@ -25,6 +37,9 @@
   <div class="form-group">
     <label for="exampleInputEmail3">Phone</label>
     <input type="number" class="form-control" id="exampleInputText3" aria-describedby="telnum" placeholder="Enter Phone" name="telnum" formControlName="telnum">
+    <div *ngIf="feedbackForm.controls['telnum'].hasError('required')" class="alert alert-danger">
+    	Please Enter Correct Phone Number
+    </div>
   </div>
 
   <div class="form-group">
@@ -32,7 +47,7 @@
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="message" name="message"></textarea>
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" [disabled]="feedbackForm.invalid">Submit</button>
 </form>
 </div>
 
