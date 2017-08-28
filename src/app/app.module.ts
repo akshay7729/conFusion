@@ -21,7 +21,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { LoginComponent } from './login/login.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ContactComponent } from './contact/contact.component';
-
+import { baseURL } from './shared/baseurl';
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,12 @@ import { ContactComponent } from './contact/contact.component';
     ReactiveFormsModule,
     NgbModule.forRoot()
   ],
-  providers: [ DishService, PromotionService ],
+  providers: [ 
+    DishService,
+    PromotionService,
+    {provide: 'BaseURL', useValue: baseURL},
+    ProcessHTTPMsgService
+  ],
   entryComponents: [LoginComponent, ContactComponent],
   bootstrap: [AppComponent]
 })

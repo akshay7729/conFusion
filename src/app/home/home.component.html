@@ -1,6 +1,6 @@
 <div class="container-fluid row cards">
 	<div class="card" style="width: 20rem;" *ngIf="dish">
-	  <img class="card-img-top" src="{{dish.image}}" alt="{{dish.name}}">
+	  <img class="card-img-top" src="{{BaseURL + dish.image}}" alt="{{BaseURL + dish.name}}">
 		  <div class="card-body">
 		     <h4 class="card-title">{{dish.name}}</h4>
 		     <p class="card-text">{{dish.description}}</p>
