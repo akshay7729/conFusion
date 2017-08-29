@@ -23,3 +23,8 @@
 
  <div [hidden]="promotion">Loading... Please Wait</div>
 </div>
+
+<div *ngIf="dishErrmess">
+	<h2>Error</h2>
+	<h2>{{ dishErrmess }}</h2>
+</div>

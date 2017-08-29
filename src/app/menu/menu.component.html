@@ -25,4 +25,9 @@
         <p class="card-text">{{selectedDish.description}}</p>
         <a href="#" class="btn btn-primary">Like</a>
       </div>
-  </div>
+</div>
+
+<div *ngIf="errMess">
+	<h2>Error</h2>
+	<h2>{{ errMess }}</h2>
+</div>

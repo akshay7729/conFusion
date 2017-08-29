@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
   
   dish: Dish;
   promotion: Promotion;
+  dishErrmess: string;
+
   constructor(
     private dishservice:DishService,
     private promotionservice:PromotionService,
@@ -20,8 +22,12 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  	this.dishservice.getFeaturedDish().subscribe(dish => this.dish = dish);
-  	this.promotionservice.getFeaturedPromotion().subscribe(promotion => this.promotion = promotion);
+  	this.dishservice.getFeaturedDish().subscribe(dish => this.dish = dish,
+      errmess => this.dishErrmess = <any>errmess);
+
+  	this.promotionservice.getFeaturedPromotion()
+      .subscribe(promotion => this.promotion = promotion,
+        errmess => this.dishErrmess = <any>errmess);
   }
 
 }
