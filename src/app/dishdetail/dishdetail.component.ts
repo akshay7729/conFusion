@@ -15,7 +15,6 @@ export class DishdetailComponent implements OnInit {
 
   @Input()
   dish:Dish;
-  dishcopy: null;
   dishIds : number[];
   prev: number;
   next: number;
@@ -29,7 +28,7 @@ export class DishdetailComponent implements OnInit {
   	this.dishervice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
   	this.route.params
   	.switchMap((params : Params) => this.dishervice.getDish(+params['id']))
-  	.subscribe(dish => {this.dish = dish; this.dishcopy = dish; this.setPrevNext(dish.id)});
+  	.subscribe(dish => {this.dish = dish; this.setPrevNext(dish.id)});
   }
 
   setPrevNext(dishId : number){
