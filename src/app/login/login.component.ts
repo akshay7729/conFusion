@@ -9,7 +9,7 @@ import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 })
 export class LoginComponent implements OnInit {
 
-  user = {username: '', password:'', remeber:false};
+  user = {username: '', password: '', remember:false};
 
   constructor(public activeModal: NgbActiveModal) { }
 
